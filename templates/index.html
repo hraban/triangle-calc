@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{url_for('static', filename ='css/style.css')}}">
+        <script type="text/javascript" href="{{url_for('static', filename ='js/triangle.js')}}"></script>
+    </head>    
+    <body>
+        <h1>Trigonometry Calculator</h1>
+        <h2>Enter the known values of your triangle and press “Calculate”. The triangle on the right will dynamically change and reveal the missing values. </h2>
+        <div class="calculationsCard">
+            <h3>Values</h3>
+            <form method="POST" action="{{ url_for('index') }}">
+                <div class="inputRow">
+                    <label>Side a: </label>
+                    <input type="text" id="side_a" name="side_a" for="triangle_sides" value="{{ side_a }}">
+                </div>
+                <div class="inputRow">
+                    <label>Side b: </label>
+                    <input type="text" id="side_b"  name="side_b" for="triangle_sides" value="{{ side_b }}">
+                </div>
+                <div class="inputRow">
+                    <label>Side c: </label>
+                    <input type="text" id="side_c"  name="side_c" for="triangle_sides" value="{{ side_c }}">
+                </div>
+                                            
+                <div class="inputRow">
+                    <label>Angle A: </label>
+                    <input type="text" id="angle_a" name="angle_a" for="triangle_angles" value="">
+                    <label><sup>&deg;</sup></label>
+                </div>
+
+                <div class="inputRow">
+                    <label>Angle B: </label>
+                    <input type="text"  id="angle_b" name="angle_b" for="triangle_angles" value="">
+                    <label><sup>&deg;</sup></label>
+                </div>
+
+                <label>Angle C: 90&deg;</label>
+     
+                <div class="inputRow">
+                    <button type="submit" name="submit" value="submit">Submit</button>
+                    <button type="reset">Clear</button>
+                </div> 
+            </form>
+        </div>
+    </body>
+</html>
